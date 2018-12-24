@@ -1,1 +1,21 @@
-<h1>Vista desde el index</h1>
+<h1> Parking Vehicles </h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Plate</th>
+      <th scope="col">Vehicle Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 0%>
+    <tr>
+      <%@vehicles.each do |vehicle|%>
+      <th scope="row"><%= count = count+1%></th>
+      <td><%= vehicle.plate %></td>
+      <td><%= vehicle.vehicle_type%></td>
+    </tr>
+   <% end %>
+  </tbody>
+</table>

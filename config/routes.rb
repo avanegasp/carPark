@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "vehicles#index"
+  root "parkings#index"
 
   resources :parking
   resources :vehicles
