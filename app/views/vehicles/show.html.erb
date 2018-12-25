@@ -1,0 +1,24 @@
+<h1>Las parqueadas de mi carro</h1>
+
+<%= link_to "ver todos ", vehicles_path %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Arrival Time</th>
+      <th scope="col">Exit Time</th>
+      <th scope="col">Rate Car</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 0%>
+    <tr>
+    <%@vehicle.parkings.each do |parking|%>
+        <th scope="row"><%= count = count + 1%></th>
+        <td><%= parking.arrival_time%> </td>
+        <td><%= parking.exit_time%> </td>
+        <td><%= parking.rate%> Ps/Mnt </td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

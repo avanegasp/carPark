@@ -6,6 +6,7 @@
       <th scope="col">#</th>
       <th scope="col">Plate</th>
       <th scope="col">Vehicle Type</th>
+      <th scope="col">My Car</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
       <th scope="row"><%= count = count+1%></th>
       <td><%= vehicle.plate %></td>
       <td><%= vehicle.vehicle_type%></td>
+      <td><%= link_to "ver", vehicle_path(vehicle.id)%></td>
     </tr>
    <% end %>
   </tbody>
