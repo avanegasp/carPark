@@ -1,0 +1,2 @@
+class ParkingService < ServiceBase
+end
