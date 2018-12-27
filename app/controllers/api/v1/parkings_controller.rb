@@ -16,6 +16,22 @@ class Api::V1::ParkingsController < ApplicationController
     end
   end
 
+  def update
+    parking  = Parking.find(params[:id])
+    if parking.update(parking_params)
+      render json: parking
+    else
+      render json: {errors: parking.errors}, status: 422
+    end
+  end
+
+  def destroy
+    parking = Parking.find(params[:id])
+    parking.destroy
+
+    head :no_content
+  end
+
   private
   def parking_params
     params.require(:parking).permit(:arrival_time, :exit_time, :rate, :vehicle_id)
