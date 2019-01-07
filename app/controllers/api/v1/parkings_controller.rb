@@ -2,7 +2,6 @@ class Api::V1::ParkingsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    # @parkings = Parking.all
     parkings = Parking.all
     render json:parkings
   end
