@@ -17,7 +17,7 @@
       <%@vehicles.each do |vehicle|%>
           <tr>
             <td><%= vehicle.plate%></td>
-            <td><%= link_to vehicle.vehicle_type, parkings_path, remote:true%></td>
+            <td><%= link_to vehicle.vehicle_type, vehicle_path(vehicle), remote:true%></td>
           </tr>
         <% end %>
       </tbody>

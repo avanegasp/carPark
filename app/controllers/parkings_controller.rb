@@ -8,6 +8,5 @@ end
 
 def show
   @parking = Parking.find(params[:id])
-  buebug
 end
 end

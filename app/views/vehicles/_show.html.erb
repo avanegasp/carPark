@@ -1,0 +1,13 @@
+<h1>Salida del auto</h1>
+<ul>
+    <% count = 0%>
+    <% @vehicle.parkings.each do |parking| %>
+      <li><%=count= count + 1 %></li>
+      <li>Rate: <%= parking.rate %></li>
+      <li>Arrival Time: <%= parking.arrival_time%></li>
+      <li>Exit time: <%= parking.exit_time%></li>
+      <li>Total Arrival Time: <%= ((parking.exit_time - parking.arrival_time).to_i / 60) / 60%> Horas</li>
+      <li>Total Arrival Time: <%= ((parking.exit_time - parking.arrival_time).to_i / 60) * parking.rate%> Pesos</li>
+      <hr class="divider">
+    <% end %>
+</ul>
