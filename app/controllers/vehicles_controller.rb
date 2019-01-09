@@ -13,7 +13,10 @@ class VehiclesController < ApplicationController
   end
 
   def create
-    @vehicle = Vehicle.find(params[:id])
+    @vehicle = Vehicle.new(vehicle_params)
+    if @vehicle.save
+        redirect_to "/"
+    end
   end
 
   private

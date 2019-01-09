@@ -1,28 +1,32 @@
-<h1>Salida del auto</h1>
+<div class="row">
+  <div class="col-lg-3">
+    <h2>Ingreso de Vehículo</h2>
+    <%= render partial: "form" %>
+  </div>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Rate</th>
-      <th scope="col">Car Arrival</th>
-      <th scope="col">Car Exit</th>
-      <th scope="col">Parking Time</th>
-      <th scope="col">Pay</th>
+  <div class="col-lg-3">
+    <h2>Vehículo</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Plate</th>
+          <th scope="col">Vehicle Type</th>
+        </tr>
+      </thead>
+      <tbody class="vehicle-plate">
+      <%@vehicles.each do |vehicle|%>
+          <tr>
+            <td><%= vehicle.plate%></td>
+            <td><%= link_to vehicle.vehicle_type, parkings_path, remote:true%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <% count = 0%>
-  <% @parkings.each do|parking| %>
-      <th scope="row"><%=count= count + 1 %></th>
-      <td><%= parking.rate%> Ps/Mnt</td>
-      <td><%= parking.arrival_time%></td>
-      <td><%= parking.exit_time%></td>
-      <td><%= (parking.exit_time - parking.arrival_time).to_i / 360%> Minutes</td>
-      <td>$ <%= ((parking.exit_time - parking.arrival_time).to_i / 360) * 7%> Pesos</td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <div class="col-lg-6">
+    <div class="total-vehicle">
+
+    </div>
+  </div>
+</div>

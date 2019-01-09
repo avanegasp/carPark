@@ -1,0 +1,25 @@
+<h1>Salida del auto</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Car Arrival</th>
+      <th scope="col">Car Exit</th>
+      <th scope="col">Parking Time</th>
+      <th scope="col">Pay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% count = 0%>
+      <th scope="row"><%=count= count + 1 %></th>
+      <td>Rate: <%= @parking.rate%> Ps/Mnt</td>
+      <td>arrival time:<%= @parking.arrival_time%></td>
+      <td>Exit time: <%= @parking.exit_time%></td>
+      <td>Total Arrival time: <%= (@parking.arrival_time - @parking.exit_time).to_i / 3600%> Minutes</td>
+      <td>$ TOTAL <%= ((@parking.arrival_time - @parking.exit_time).to_i / 3600) * 7%> Pesos</td>
+    </tr>
+  </tbody>
+</table>
